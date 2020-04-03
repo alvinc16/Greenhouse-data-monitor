@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b8287818-563c-4860-b704-c21d4c4efa7b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1ZFNcSOLK9JoXrBjPz2tBXmXD7X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/image" />
+      <recent name="$PROJECT_DIR$/前端" />
+      <recent name="$PROJECT_DIR$/前端/image" />
+      <recent name="$PROJECT_DIR$/前端/css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration name="main.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/服务器/main.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="write_maysql_data.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/write_maysql_data.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="write_mysql.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/write_mysql.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+        <item itemvalue="Node.js.write_mysql.js" />
+        <item itemvalue="Node.js.write_maysql_data.js" />
+        <item itemvalue="JavaScript Debug.main.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8287818-563c-4860-b704-c21d4c4efa7b" name="Default Changelist" comment="" />
+      <created>1584430960168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584430960168</updated>
+      <workItem from="1584430961639" duration="22693000" />
+      <workItem from="1584667196436" duration="31168000" />
+      <workItem from="1584749927894" duration="22557000" />
+      <workItem from="1584935123573" duration="542000" />
+      <workItem from="1584935714810" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2047" y="208" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584431987081">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state x="2047" y="208" key="#com.intellij.fileTypes.FileTypeChooser/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584431987081" />
+    <state width="1854" height="242" key="GridCell.Tab.0.bottom" timestamp="1584797345686">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state width="863" height="214" key="GridCell.Tab.0.bottom/30.23.1250.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584635776035" />
+    <state width="881" height="161" key="GridCell.Tab.0.bottom/33.23.1247.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584460210866" />
+    <state width="881" height="161" key="GridCell.Tab.0.bottom/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461872377" />
+    <state width="881" height="161" key="GridCell.Tab.0.bottom/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461649547" />
+    <state width="1854" height="242" key="GridCell.Tab.0.bottom/37.23.1243.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584797345686" />
+    <state width="1854" height="242" key="GridCell.Tab.0.center" timestamp="1584797345685">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state width="863" height="214" key="GridCell.Tab.0.center/30.23.1250.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584635776035" />
+    <state width="881" height="161" key="GridCell.Tab.0.center/33.23.1247.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584460210865" />
+    <state width="881" height="161" key="GridCell.Tab.0.center/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461872376" />
+    <state width="881" height="161" key="GridCell.Tab.0.center/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461649546" />
+    <state width="1854" height="242" key="GridCell.Tab.0.center/37.23.1243.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584797345685" />
+    <state width="1854" height="242" key="GridCell.Tab.0.left" timestamp="1584797345684">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state width="863" height="214" key="GridCell.Tab.0.left/30.23.1250.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584635776034" />
+    <state width="881" height="161" key="GridCell.Tab.0.left/33.23.1247.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584460210864" />
+    <state width="881" height="161" key="GridCell.Tab.0.left/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461872375" />
+    <state width="881" height="161" key="GridCell.Tab.0.left/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461649545" />
+    <state width="1854" height="242" key="GridCell.Tab.0.left/37.23.1243.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584797345684" />
+    <state width="1854" height="242" key="GridCell.Tab.0.right" timestamp="1584797345685">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state width="863" height="214" key="GridCell.Tab.0.right/30.23.1250.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584635776035" />
+    <state width="881" height="161" key="GridCell.Tab.0.right/33.23.1247.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584460210866" />
+    <state width="881" height="161" key="GridCell.Tab.0.right/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461872376" />
+    <state width="881" height="161" key="GridCell.Tab.0.right/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584461649547" />
+    <state width="1854" height="242" key="GridCell.Tab.0.right/37.23.1243.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584797345685" />
+    <state x="65" y="45" key="SettingsEditor" timestamp="1584935666868">
+      <screen x="46" y="23" width="1234" height="777" />
+    </state>
+    <state x="1691" y="47" key="SettingsEditor/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584431476622" />
+    <state x="1691" y="47" key="SettingsEditor/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584431312034" />
+    <state x="65" y="45" key="SettingsEditor/46.23.1234.777@46.23.1234.777" timestamp="1584935666868" />
+    <state x="326" y="33" width="1247" height="762" key="dock-window-1" timestamp="1584454711660">
+      <screen x="34" y="23" width="1246" height="777" />
+    </state>
+    <state x="33" y="23" width="1247" height="762" key="dock-window-1/30.23.1250.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584432511861" />
+    <state x="326" y="33" width="1247" height="762" key="dock-window-1/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584454711660" />
+    <state x="2077" y="331" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1584454653080">
+      <screen x="1280" y="-120" width="1920" height="1057" />
+    </state>
+    <state x="2141" y="333" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/34.23.1246.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584454619826" />
+    <state x="2077" y="331" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/35.23.1245.777/1280.-120.1920.1057@1280.-120.1920.1057" timestamp="1584454653080" />
+  </component>
+</project>

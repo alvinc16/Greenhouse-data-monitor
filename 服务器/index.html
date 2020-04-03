@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>农业大棚数据监控系统</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/simplecss.css"/>
+		<script src="ajax.js"></script>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		<div class="login">
+			<div class="login_box">
+				<div class="head_login">
+					<img src="image/head_login.png"/>
+				</div>
+				<div class="message">
+					<input type="text" name="name" id="name" value="请输入用户名" style="color: #CCCCCC;"/></br>
+					<input type="text" name="password" id="password" value="请输入密码" style="color: #CCCCCC;"/></br>
+					<button id="btn1">登录</button>
+				</div>
+			</div>
+				
+		</div>
+		<script type="text/javascript">
+			var oName = document.getElementById("name");
+			var oPass = document.getElementById("password");
+			var oBtn = document.getElementById("btn1");
+			oName.onfocus = function(){
+				oName.value = '';
+				oName.style.color = "black";
+			}
+			oPass.onfocus = function(){
+				oPass.type = "password";
+				oPass.value = '';
+				oPass.style.color = "black";
+			}
+			oName.onblur = function(){
+				if(oName.value === ''){
+					oName.value = "请输入用户名";
+					oName.style.color = "#CCCCCC";
+				}
+			}
+			oPass.onblur = function(){
+				if(oPass.value === ''){
+					oPass.value = "请输入密码";
+					oPass.style.color = "#CCCCCC";
+					oPass.type = "text";
+				}
+			}
+			oBtn.onclick = function () {
+				ajax({
+					method:'post',
+					url:'/login',
+					data:'username='+oName.value+'&password='+oPass.value,
+					success:function (result) {
+						if(result.status === 0){
+							//登录成功
+							window.location.href = '/1519379791'
+						}else{
+							//登录失败
+							alert(result.message);
+						}
+					}
+				})
+			}
+			
+		</script>
+	</body>
+</html>

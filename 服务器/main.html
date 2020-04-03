@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/simplecss1.css"/>
+    <script src="ajax.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/echarts/dist/echarts.js"></script>
+    <script>
+        var oBtn_airT = document.getElementsByClassName('data_name1');
+        var oBtn_airHR = document.getElementsByClassName('data_name2');
+        var oBtn_soilT = document.getElementsByClassName('data_name3');
+        var oBtn_soilHR = document.getElementsByClassName('data_name4');
+        var oBtn_CO2 = document.getElementsByClassName('data_name5');
+        var oBtn_light = document.getElementsByClassName('data_name6');
+    </script>
+<!--    <script src="node_modules/echarts/theme/"></script>-->
+    <style type="text/css">
+        div {
+            border: 1px solid transparent;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        button {
+            background: rgb(98, 167, 255);
+            border-radius: 8px;
+            color: white;
+        }
+
+        .background {
+            background: url(./image/background.jpg) center no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            width: 100%;
+            height: 100%;
+            border: 1px solid transparent;
+            position: absolute;
+        }
+
+        .interface {
+            border: 1px solid transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            margin: auto;
+            width: 80%;
+            height: 90%;
+        }
+
+        .box {
+            /*margin: auto;*/
+            border: 1px solid transparent;
+            height: 100%;
+            /*position: relative;*/
+        }
+
+        .left_box {
+            background: rgba(252, 250, 251, 0.6);
+            border: 1px solid transparent;
+        }
+
+        .right_box {
+            background: rgba(252, 250, 251, 0.8);
+            border: 1px solid transparent;
+        }
+
+        .head_name,
+        .head_name1,
+        .head_name2,
+        .head_name3 {
+            border: 1px solid transparent;
+            width: 100%;
+            height: 10%;
+            position: relative;
+            text-align: center;
+            color: #322c3c;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .head_name1 {
+            color: #4bd25a;
+        }
+
+        .head_name2 {}
+
+        .head_name_inner {
+            border: 1px solid transparent;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .head_name0 {
+            border: 1px solid transparent;
+            width: 100%;
+            height: 2%;
+        }
+
+        .photo_1 {
+            height: 25px;
+            width: 150px;
+            border: 1px solid transparent;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            margin-top: auto;
+            position: absolute;
+            display: block;
+        }
+
+        .right_line1 {
+            width: 100%;
+            height: 40%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .right_line2 {
+            width: 100%;
+            height: 10%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .right_line_blank {
+            width: 100%;
+            height: 5%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .right_line3 {
+            width: 100%;
+            height: 35%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .right_line_blank1 {
+            width: 100%;
+            height: 5%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+        }
+
+        .right_line4 {
+            width: 100%;
+            height: 5%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: relative;
+        }
+
+        .house_box {
+            height: 100%;
+            border: 1px solid transparent;
+        }
+
+        .house_name1,
+        .house_name2,
+        .house_name3,
+        .house_name4 {
+            height: 25%;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .house_name_inner {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            height: 80%;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            font-weight: bold;
+            /*background: rgba(240,230,240,50%);*/
+            border-radius: 8px;
+        }
+
+        .graph_box {
+            height: 100%;
+            border: 1px solid transparent;
+            background: rgba(250, 247, 249, 0.8);
+        }
+
+        .left_blank {
+            height: 100%;
+            border: 1px solid transparent;
+        }
+
+        .data_option {
+            height: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+            border: 1px solid transparent;
+        }
+
+        .data_name1,
+        .data_name2,
+        .data_name3,
+        .data_name4,
+        .data_name5,
+        .data_name6,
+        .data_name7 {
+            height: 100%;
+            font-size: 14px;
+        }
+
+        .irrigation_box,
+        .juanlian_box {
+            height: 100%;
+            border: 1px solid transparent;
+            background: rgba(250, 247, 249, 0.4);
+        }
+
+        .irrigation_middle,
+        .juanlian_middle {
+            border: 1px solid transparent;
+        }
+
+        .irrigation_middle_box1,
+        .irrigation_middle_box2,
+        .juanlian_middle_box1,
+        .juanlian_middle_box2 {
+            width: 60%;
+            height: 30%;
+            margin: auto;
+            margin-top: 20px;
+            border: 1px solid transparent;
+        }
+
+        #irrigation_open,
+        #irrigation_close,
+        #juanlian_close,
+        #juanlian_open {
+            height: 100%;
+            width: 100%;
+            font-size: 30px;
+            border: 1px solid transparent;
+        }
+
+        .irrigation_left,
+        .juanlian_left {
+            border: 1px solid transparent;
+            background: rgba(85, 117, 114, 0.3);
+        }
+
+        .irrigation_right,
+        .juanlian_right {
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .irrigation_right_photo,
+        .juanlian_right_photo {
+            width: auto;
+            height: auto;
+            border: 1px solid transparent;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .irrigation_right_status,
+        .juanlian_right_status {
+            border: 1px solid transparent;
+        }
+
+        .data_box {
+            border: 1px solid transparent;
+        }
+
+        .head_left_name {
+            height: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid transparent;
+            background: rgba(85, 117, 114, 0.3);
+        }
+
+        .data_right_number {
+            height: 100%;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid transparent;
+            background: rgba(250, 247, 249, 0.4);
+        }
+    </style>
+</head>
+<body>
+<body>
+<div class="background">
+    <div class="interface">
+        <div class="col-md-2 box left_box">
+            <div class="head_name">
+                <img class="photo_1" src="image/left_head.png" />
+            </div>
+            <div class="head_name0"></div>
+            <div class="head_name1">
+                <div class="head_name_inner">数据监控</div>
+            </div>
+            <div class="head_name2">
+                <div class="head_name_inner">历史数据</div>
+            </div>
+            <div class="head_name3 "></div>
+        </div>
+        <div class="col-md-10 box right_box">
+            <div class="right_line1">
+                <div class="col-md-4 house_box">
+                    <div class="house_name1"><button style="background-color: #4bd25a;" class="house_name_inner">1号大棚</button></div>
+                    <div class="house_name2"><button class="house_name_inner">2号大棚</button></div>
+                    <div class="house_name3"><button class="house_name_inner">3号大棚</button></div>
+                    <div class="house_name4"><button class="house_name_inner">4号大棚</button></div>
+                </div>
+                <div class="col-md-8 graph_box" id="main"></div>
+            </div>
+            <div class="right_line2">
+                <div class="col-md-4 left_blank"></div>
+                <div class="col-md-8 data_option">
+                    <button onclick="click_btn(oBtn_airT)" style="background-color: #4bd25a;" class="data_name1 col-md-2">空气温度</button>
+                    <button onclick="click_btn(oBtn_airHR)"  class="data_name2 col-md-2">空气湿度</button>
+                    <button onclick="click_btn(oBtn_soilT)"class="data_name3 col-md-2">土壤温度</button>
+                    <button onclick="click_btn(oBtn_soilHR)" class="data_name4 col-md-2">土壤湿度</button>
+                    <button onclick="click_btn(oBtn_CO2)" class="data_name5 col-md-2">二氧化碳浓度</button>
+                    <button onclick="click_btn(oBtn_light)" class="data_name6 col-md-2">光照强度</button>
+                </div>
+            </div>
+            <div class="right_line_blank"></div>
+            <div class="right_line3">
+
+                <div class="col-md-13 irrigation_box">
+                    <div class="col-md-1 irrigation_left" style="text-align:center;font-weight: bold;font-size: 25px;">
+                        </br>灌溉系统</div>
+                    <div class="col-md-6 irrigation_middle">
+                        <div class="irrigation_middle_box1">
+                            <button id="irrigation_open" onclick = open_machine(irrigation_status) >开启</button>
+                        </div>
+                        <div class="irrigation_middle_box2">
+                            <button id="irrigation_close" onclick = close_machine(irrigation_status)>关闭</button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 irrigation_right">
+                        <div style="border: 1px solid transparent;position: relative;height: 30%;width: 100%;background: rgba(85, 117, 114, 0.3)"><img class="irrigation_right_photo" src="image/status.png" /></div>
+                        <div class="irrigation_right_status" style="height: 70%;width: 100%;"><img src="image/open.png" /></div>
+                    </div>
+                </div>
+                <div style="border: 1px solid transparent;" class="col-md-14"></div>
+                <div class="col-md-13 juanlian_box">
+                    <div class="col-md-1 juanlian_left" style="text-align:center;font-weight: bold;font-size: 25px;">
+                        </br>卷帘机</div>
+                    <div class="col-md-6 juanlian_middle">
+                        <div class="juanlian_middle_box1">
+                            <button id="juanlian_open" onclick = open_machine(juanlian_status)>开启</button>
+                        </div>
+                        <div class="juanlian_middle_box2">
+                            <button id="juanlian_close" onclick = close_machine(juanlian_status)>关闭</button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 juanlian_right">
+                        <div style="border: 1px solid transparent;position: relative;height: 30%;width: 100%;background: rgba(85, 117, 114, 0.3)"><img class="juanlian_right_photo" src="image/status.png" /></div>
+                        <div class="juanlian_right_status" style="height: 70%;width: 100%;"><img src="image/close.png" /></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right_line_blank1" style="border: 1px solid transparent;">
+            </div>
+            <div class="data_box right_line4">
+                <div class="col-md-2 head_left_name">实时数据</div>
+                <div class="col-md-10 data_right_number" id="bottom_data">数据</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+</script>
+</body>
+    <script>
+        var myChart = echarts.init(document.getElementById('main'));  // 直接开始初始化，还是要用原生javascript
+        var bottom_data = document.getElementById("bottom_data");
+        var oBtn_airT = document.getElementsByClassName('data_name1');
+        var oBtn_airHR = document.getElementsByClassName('data_name2');
+        var oBtn_soilT = document.getElementsByClassName('data_name3');
+        var oBtn_soilHR = document.getElementsByClassName('data_name4');
+        var oBtn_CO2 = document.getElementsByClassName('data_name5');
+        var oBtn_light = document.getElementsByClassName('data_name6');
+        var irrigation_status = document.getElementsByClassName('irrigation_right_status');
+        var juanlian_status = document.getElementsByClassName("juanlian_right_status");
+        var irrigation_open = document.getElementsByClassName("irrigation_open");
+        var irrigation_close = document.getElementsByClassName("irrigation_close");
+        var juanlian_open = document.getElementsByClassName("irrigation_open");
+        var juanlian_close = document.getElementsByClassName("irrigation_close");
+        function open_machine(obj) {
+            // console.log(obj[0].innerHTML)
+            obj[0].innerHTML = '<img src="image/open.png" />'
+        }
+        function close_machine(obj) {
+            obj[0].innerHTML = '<img src="image/close.png" />'
+        }
+        // // oBtn_airT.onclick = click_btn();
+        // // oBtn_airHR.onclick = click_btn();
+        // // console.log(oBtn_airT[0].style.backgroundColor);
+        function create_myChart() {
+            $.ajax({
+                url:"/chart",
+                type:'get',
+                dataType:'json',
+                success:function(jsons){
+                    // console.log(jsons);
+                    var Item = function(){
+                        return {
+                            name:'',
+                            type:'line',
+                            yAxisIndex: 0,//对应第二个y轴
+                            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                            label: {normal: {position: 'top'}},
+                            markLine: {data: [{type: 'average', name: '平均值'}]},
+                            data:[]
+                        }
+                    };// series中的每一项为一个item,所有的属性均可以在此处定义
+                    var legends = [];// 准备存放图例数据
+                    var Series = []; // 准备存放图表数据
+                    var json = jsons.data_json;// 后台返回的json
+                    for(var i=0;i < json.length;i++){
+                        var it = new Item();
+                        it.yAxisIndex = i+1;
+                        // console.log(it.yAxisIndex);
+                        it.name = json[i].name;// 先将每一项填充数据
+                        legends.push(json[i].name);// 将每一项的图例名称也放到图例的数组中
+                        it.data = json[i].data;
+                        Series.push(it);// 将item放在series中
+                    }
+
+                    option.xAxis[0].data = jsons.xcontent;// 这一步是设置X轴数据了，需要注意：option.xAxis.data = json.xcontent这样不行
+                    // 折线图可设置上下两个X轴，所以必须是option.xAxis[0].data = json.xcontent
+                    option.legend.data = legends;// 设置图例
+                    option.series = Series; // 设置图表
+                    myChart.setOption(option);// 重新加载图表
+                    // console.log(json[0])
+                    // console.log(json[0].data)
+                    // console.log(json[0].data.length)
+                    // console.log(json[0].data[(json[0].data.length-1)]);
+                    bottom_data.innerHTML = "空气温度" + json[0].data[(json[0].data.length-1)] + "℃ 空气湿度"+json[1].data[(json[1].data.length-1)] + "% 土壤温度" + json[2].data[(json[2].data.length-1)] + "℃ 土壤湿度" + json[3].data[(json[3].data.length-1)] + "% CO2 " + json[4].data[(json[4].data.length-1)]  + "% 光照强度" +  json[5].data[(json[5].data.length-1)] +"lx"
+                },
+                error:function(){
+                    alert("数据加载失败！请检查数据链接是否正确");
+                }
+            })
+        }
+        // var option = { <pre name="code" class="javascript"> }; // 图表的定义数据
+        var option = {}
+        myChart.setOption(option);
+        option = {
+            title: {// 图表标题，可以通过show:true/false控制显示与否，还有subtext:'二级标题',link:'http://www.baidu.com'等
+                text: ''
+            },
+            tooltip : {// 这个是鼠标浮动时的工具条，显示鼠标所在区域的数据，trigger这个地方每种图有不同的设置，见官网吧，一两句说不清楚
+                trigger: 'axis'
+            },
+            legend: {// 这个就是图例，也就是每条折线或者项对应的示例，就是这个<a target=_blank href="https://img-blog.csdn.net/20160622094820180?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">图例</a>
+                data:['空气温度','空气湿度','土壤温度','土壤湿度','二氧化碳浓度','光照强度'],
+                selected : {
+                    '空气温度':true,
+                    '空气湿度':false,
+                    '土壤温度':false,
+                    '土壤湿度':false,
+                    '二氧化碳浓度':false,
+                    '光照强度':false,
+                }
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}// 工具，提供几个按钮，例如动态图表转换，数据视图，保存为图片等
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',// 这几个属性可以控制图表上下左右的空白尺寸，可以自己试试。
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : []// X轴的定义
+                }
+            ],
+            yAxis : [
+                {
+                    type: 'value',//左边的y轴
+                    name: '',
+                    boundaryGap: [0, 0.01]
+
+                },
+                {
+                    type: 'value',//右边第一个y轴
+                    name: '',//空气温度：℃
+                    nameTextStyle: {color: '#ccc'},
+                     // axisLine : {show : true}
+                },
+                {   type: 'value',//右边第二个Y轴
+                    name: '',//空气湿度:%
+                    // axisLine : {show : false}
+                },
+                {   type: 'value',//右边第二个Y轴
+                    name: '',//土壤温度:℃
+                    // axisLine : {show : false}
+                },
+                {   type: 'value',//右边第二个Y轴
+                    name: '',//土壤湿度:%
+                    // axisLine : {show : false}
+                },
+                {   type: 'value',//右边第二个Y轴
+                    name: '',//二氧化碳浓度:%
+                    // axisLine : {show : false}
+                },
+                {   type: 'value',//右边第二个Y轴
+                    name: '',//光照强度:lx
+                    // axisLine : {show : false}
+                },
+            ],
+            series : []// 这里就是数据了
+        };
+        setInterval(create_myChart,1000);
+        // setInterval(create_myChart,1000);
+        myChart.on('legendselectchanged', function(obj) {
+            // console.log(obj);
+            // var option = this.getOption();
+            // console.log()
+            // console.log(option)
+            // console.log(obj);
+            // console.log(option.yAxis)
+            if (obj.name === '空气温度'){
+                if (obj.selected['空气温度']){
+                    //若显示气温折线，则隐藏降水量
+                    option.legend.selected['空气温度'] = true;
+                    option.legend.selected['空气湿度'] = false;
+                    option.legend.selected['土壤温度'] = false;
+                    option.legend.selected['土壤湿度'] = false;
+                    option.legend.selected['二氧化碳浓度'] = false;
+                    option.legend.selected['光照强度'] = false;
+                    //将右边第二个Y轴的name属性设为所需，将别的轴的name属性设为空串，实现隐藏效果，只要这样，刻度也会自动跟着变
+                    option.yAxis[1].name='空气温度/℃';
+                    option.yAxis[2].name='';
+                    option.yAxis[3].name='';
+                    option.yAxis[4].name='';
+                    option.yAxis[5].name='';
+                    option.yAxis[6].name='';
+                    // option.yAxis[2].name='';
+                    // option.yAxis[2].name='';
+                    // option.yAxis[2].name='';
+                }
+            }else if (obj.name ==='空气湿度'){
+                if (obj.selected['空气湿度']){
+                    option.legend.selected['空气温度'] = false;
+                    option.legend.selected['空气湿度'] = true;
+                    option.legend.selected['土壤温度'] = false;
+                    option.legend.selected['土壤湿度'] = false;
+                    option.legend.selected['二氧化碳浓度'] = false;
+                    option.legend.selected['光照强度'] = false;
+                    option.yAxis[2].name='空气湿度/%';
+                    option.yAxis[1].name='';
+                    option.yAxis[3].name='';
+                    option.yAxis[4].name='';
+                    option.yAxis[5].name='';
+                    option.yAxis[6].name='';
+                }
+            }else if (obj.name ==='土壤温度'){
+                if (obj.selected['土壤温度']){
+                    option.legend.selected['空气温度'] = false;
+                    option.legend.selected['空气湿度'] = false;
+                    option.legend.selected['土壤温度'] = true;
+                    option.legend.selected['土壤湿度'] = false;
+                    option.legend.selected['二氧化碳浓度'] = false;
+                    option.legend.selected['光照强度'] = false;
+                    option.yAxis[3].name='土壤温度/℃';
+                    option.yAxis[1].name='';
+                    option.yAxis[2].name='';
+                    option.yAxis[4].name='';
+                    option.yAxis[5].name='';
+                    option.yAxis[6].name='';
+                }
+            }else if (obj.name ==='土壤湿度'){
+                if (obj.selected['土壤湿度']){
+                    option.legend.selected['空气温度'] = false;
+                    option.legend.selected['空气湿度'] = false;
+                    option.legend.selected['土壤温度'] = false;
+                    option.legend.selected['土壤湿度'] = true;
+                    option.legend.selected['二氧化碳浓度'] = false;
+                    option.legend.selected['光照强度'] = false;
+                    option.yAxis[4].name='土壤湿度/%';
+                    option.yAxis[1].name='';
+                    option.yAxis[2].name='';
+                    option.yAxis[3].name='';
+                    option.yAxis[5].name='';
+                    option.yAxis[6].name='';
+                }
+            }else if (obj.name ==='二氧化碳浓度'){
+                if (obj.selected['二氧化碳浓度']){
+                    option.legend.selected['空气温度'] = false;
+                    option.legend.selected['空气湿度'] = false;
+                    option.legend.selected['土壤温度'] = false;
+                    option.legend.selected['土壤湿度'] = false;
+                    option.legend.selected['二氧化碳浓度'] = true;
+                    option.legend.selected['光照强度'] = false;
+                    option.yAxis[5].name='二氧化碳浓度/%';
+                    option.yAxis[1].name='';
+                    option.yAxis[2].name='';
+                    option.yAxis[3].name='';
+                    option.yAxis[4].name='';
+                    option.yAxis[6].name='';
+                }
+            }else if (obj.name ==='光照强度'){
+                if (obj.selected['光照强度']){
+                    option.legend.selected['空气温度'] = false;
+                    option.legend.selected['空气湿度'] = false;
+                    option.legend.selected['土壤温度'] = false;
+                    option.legend.selected['土壤湿度'] = false;
+                    option.legend.selected['二氧化碳浓度'] = false;
+                    option.legend.selected['光照强度'] = true;
+                    option.yAxis[6].name='光照强度/lx';
+                    option.yAxis[1].name='';
+                    option.yAxis[2].name='';
+                    option.yAxis[3].name='';
+                    option.yAxis[4].name='';
+                    option.yAxis[5].name='';
+                }
+            }
+            this.setOption(option)
+            window.option = option;
+        });
+
+        function click_btn(btn) {
+            oBtn_airT[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            oBtn_airHR[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            oBtn_soilT[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            oBtn_soilHR[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            oBtn_CO2[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            oBtn_light[0].style.backgroundColor = 'rgb(98, 167, 255)';
+            if (btn[0].style.backgroundColor === 'rgb(75, 210, 90)'){
+                // console.log("进入第一个")
+                btn[0].style.backgroundColor = 'rgb(98, 167, 255)'
+            }else if (btn[0].style.backgroundColor === 'rgb(98, 167, 255)'){
+                // console.log("进入第二个")
+                btn[0].style.backgroundColor = 'rgb(75, 210, 90)';
+
+            }
+            // var option = {}
+            // var option = window.option;
+            // console.log(option.legend)
+            // console.log(option.legend.selected['空气温度'])
+            if(btn === oBtn_airT){
+                option.legend.selected['空气温度'] = true;
+                option.legend.selected['空气湿度'] = false;
+                option.legend.selected['土壤温度'] = false;
+                option.legend.selected['土壤湿度'] = false;
+                option.legend.selected['二氧化碳浓度'] = false;
+                option.legend.selected['光照强度'] = false;
+                option.yAxis[1].name='空气温度/℃';
+                option.yAxis[2].name='';
+                option.yAxis[3].name='';
+                option.yAxis[4].name='';
+                option.yAxis[5].name='';
+                option.yAxis[6].name='';
+            }else if (btn === oBtn_airHR){
+                option.legend.selected['空气温度'] = false;
+                option.legend.selected['空气湿度'] = true;
+                option.legend.selected['土壤温度'] = false;
+                option.legend.selected['土壤湿度'] = false;
+                option.legend.selected['二氧化碳浓度'] = false;
+                option.legend.selected['光照强度'] = false;
+                option.yAxis[2].name='空气湿度/%';
+                option.yAxis[1].name='';
+                option.yAxis[3].name='';
+                option.yAxis[4].name='';
+                option.yAxis[5].name='';
+                option.yAxis[6].name='';
+            }else if (btn === oBtn_soilT) {
+                option.legend.selected['空气温度'] = false;
+                option.legend.selected['空气湿度'] = false;
+                option.legend.selected['土壤温度'] = true;
+                option.legend.selected['土壤湿度'] = false;
+                option.legend.selected['二氧化碳浓度'] = false;
+                option.legend.selected['光照强度'] = false;
+                option.yAxis[3].name='土壤温度/℃';
+                option.yAxis[1].name='';
+                option.yAxis[2].name='';
+                option.yAxis[4].name='';
+                option.yAxis[5].name='';
+                option.yAxis[6].name='';
+            }else if(btn === oBtn_soilHR) {
+                option.legend.selected['空气温度'] = false;
+                option.legend.selected['空气湿度'] = false;
+                option.legend.selected['土壤温度'] = false;
+                option.legend.selected['土壤湿度'] = true;
+                option.legend.selected['二氧化碳浓度'] = false;
+                option.legend.selected['光照强度'] = false;
+                option.yAxis[4].name='土壤湿度/%';
+                option.yAxis[1].name='';
+                option.yAxis[2].name='';
+                option.yAxis[3].name='';
+                option.yAxis[5].name='';
+                option.yAxis[6].name='';
+            }else if(btn === oBtn_CO2) {
+                option.legend.selected['空气温度'] = false;
+                option.legend.selected['空气湿度'] = false;
+                option.legend.selected['土壤温度'] = false;
+                option.legend.selected['土壤湿度'] = false;
+                option.legend.selected['二氧化碳浓度'] = true;
+                option.legend.selected['光照强度'] = false;
+                option.yAxis[5].name='二氧化碳浓度/%';
+                option.yAxis[1].name='';
+                option.yAxis[2].name='';
+                option.yAxis[3].name='';
+                option.yAxis[4].name='';
+                option.yAxis[6].name='';
+            }else if(btn === oBtn_light) {
+                option.legend.selected['空气温度'] = false;
+                option.legend.selected['空气湿度'] = false;
+                option.legend.selected['土壤温度'] = false;
+                option.legend.selected['土壤湿度'] = false;
+                option.legend.selected['二氧化碳浓度'] = false;
+                option.legend.selected['光照强度'] = true;
+                option.yAxis[6].name='光照强度/lx';
+                option.yAxis[1].name='';
+                option.yAxis[2].name='';
+                option.yAxis[3].name='';
+                option.yAxis[4].name='';
+                option.yAxis[5].name='';
+            }
+
+
+        }
+        window.onresize = myChart.resize;
+    </script>
+</body>
+</html>
